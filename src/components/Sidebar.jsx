@@ -23,10 +23,9 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => {
     getVideosType()
       .then((res) => {
         setCategories(res);
-        console.log(res)
       })
       .catch((err) => {
-        console.log(`${err}`);
+        console.log(`Get video type: ${err}`);
       });
   },[]);
   return (
@@ -49,12 +48,13 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => {
           key={category.type_id}
         >
           <span
+            className={category.icon}
             style={{
               color: category.name === selectedCategory ? "white" : "red",
               marginRight: "15px",
             }}
           >
-            {category.icon}
+            
           </span>
           <span
             style={{

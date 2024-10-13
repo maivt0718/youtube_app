@@ -31,7 +31,7 @@ const Feed = () => {
     })
 
     
-  })
+  },[])
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>

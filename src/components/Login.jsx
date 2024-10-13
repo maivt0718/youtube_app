@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { loginAPI, loginFBAPI } from "../utils/fetchFromAPI";
 import { toast } from "react-toastify";
 import FacebookLoginWithButton, { FacebookLogin } from "react-facebook-login";
+import { colors } from "@mui/material";
 
 const Login = () => {
   const [channelDetail, setChannelDetail] = useState();
@@ -49,7 +50,7 @@ const Login = () => {
             </label>
             <input className="form-control" id="pass" />
           </div>
-          <div className="col-12">
+          <div className="col-12 space-x-5">
             <button
               type="button"
               className="btn btn-primary"
@@ -75,11 +76,13 @@ const Login = () => {
             >
               Login
             </button>
+            
             <FacebookLoginWithButton
               appId="YOUR_FACEBOOK_APP_ID"
               onSuccess={handleSuccess}
               onFail={handleFailure}
             ></FacebookLoginWithButton>
+            <Link className="text-primary" to={`/forgotPass`}> Forget Password </Link>
           </div>
         </form>
       </div>
