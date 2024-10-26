@@ -139,5 +139,10 @@ export const changePasswordAPI = async (payload) => {
   return data
 }
 
+export const getUserAPI = async () => {
+  const {data} = await axiosInstance.get(`users/get_all_user`)
+  return data
+}
+
 
 

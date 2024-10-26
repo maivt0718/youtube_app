@@ -50,6 +50,12 @@ const Login = () => {
             </label>
             <input className="form-control" id="pass" />
           </div>
+          <div className="col-md-12">
+            <label htmlFor="inputEmail4" className="form-label">
+              Code
+            </label>
+            <input className="form-control" id="code" />
+          </div>
           <div className="col-12 space-x-5">
             <button
               type="button"
@@ -57,7 +63,8 @@ const Login = () => {
               onClick={() => {
                 let email = document.getElementById("email").value;
                 let pass_word = document.getElementById("pass").value;
-                loginAPI({ email, pass_word })
+                let code = document.getElementById("code").value;
+                loginAPI({ email, pass_word, code })
                   .then((res) => {
                     toast.success(res.message);
                     localStorage.setItem("LOGIN_USER", res.data);
